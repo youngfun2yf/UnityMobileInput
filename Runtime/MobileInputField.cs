@@ -17,6 +17,7 @@ namespace Mopsicus.Plugins {
     /// Wrapper for Unity InputField
     /// Add this component on your InputField
     /// </summary>
+    [RequireComponent (typeof (CustomInputField))]
     public class MobileInputField : MobileInputReceiver {
 
         /// <summary>
@@ -95,7 +96,7 @@ namespace Mopsicus.Plugins {
         /// <summary>
         /// InputField object
         /// </summary>
-        private InputField _inputObject;
+        private CustomInputField _inputObject;
 
         /// <summary>
         /// Text object from _inputObject
@@ -191,7 +192,7 @@ namespace Mopsicus.Plugins {
         /// Constructor
         /// </summary>
         private void Awake () {
-            _inputObject = this.GetComponent<InputField> ();
+            _inputObject = this.GetComponent<CustomInputField> ();
             if ((object) _inputObject == null) {
                 Debug.LogError (string.Format ("No found InputField for {0} MobileInput", this.name));
                 throw new MissingComponentException ();
@@ -247,7 +248,7 @@ namespace Mopsicus.Plugins {
         /// <summary>
         /// Current InputField for external access
         /// </summary>
-        public InputField InputField {
+        public CustomInputField InputField {
             get {
                 return _inputObject;
             }
@@ -368,7 +369,7 @@ namespace Mopsicus.Plugins {
             _config.Align = _inputObjectText.alignment.ToString ();
             _config.ContentType = _inputObject.contentType.ToString ();
             _config.BackgroundColor = _inputObject.colors.normalColor;
-            _config.Multiline = (_inputObject.lineType == InputField.LineType.SingleLine) ? false : true;
+            _config.Multiline = (_inputObject.lineType == CustomInputField.LineType.SingleLine) ? false : true;
             _config.KeyboardType = _inputObject.keyboardType.ToString ();
             _config.InputType = _inputObject.inputType.ToString ();
         }
