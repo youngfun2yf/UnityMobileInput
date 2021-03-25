@@ -15,7 +15,7 @@
 	"dependencies": {
 	},
 	"repository": {
-		"url": "https://github.com/youngfun2yf/UnityMobileInput",
+		"url": "https://github.com/youngfun2yf/UnityMobileInput.git",
 		"type": "git"
 	},
 	"samples": [
