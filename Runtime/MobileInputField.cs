@@ -17,7 +17,6 @@ namespace Mopsicus.Plugins {
     /// Wrapper for Unity InputField
     /// Add this component on your InputField
     /// </summary>
-    [RequireComponent (typeof (CustomInputField))]
     public class MobileInputField : MobileInputReceiver {
 
         /// <summary>
